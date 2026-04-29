@@ -47,19 +47,20 @@ estilos = {
 }
 
 
-class Funcionario:
-    def __init__(self, nome, setor, cargo, empresa="Samptech"):
+class Gamer:
+    def __init__(self, nome, nick, jogos_favoritos):
         self.nome = nome
-        self.setor = setor
-        self.cargo = cargo
-        self.empresa = empresa
+        self.nick = nick
+        self.jogos_favoritos = jogos_favoritos
 
-    def apresentar(self):
-        return f"{estilos['negrito']}{cores['azul']}Funcionário: {cores['vermelho']}{self.nome} {cores['azul']}setor: {cores['verde']}{self.setor} {cores['azul']}cargo: {cores['amarelo']}{self.cargo} na empresa {cores['roxo']}{self.empresa}{cores['limpa']}"
+    def ficha(self):
+        print(f"{estilos['negrito']}{cores['azul']}Nome: {estilos['reset']}{self.nome}")
+        print(f"{estilos['negrito']}{cores['azul']}Nick: {estilos['reset']}{self.nick}")
+        print(
+            f"{estilos['negrito']}{cores['azul']}Jogos Favoritos: {estilos['reset']}{', '.join(self.jogos_favoritos)}"
+        )
 
 
-funcionario1 = Funcionario("João", "TI", "Analista de Sistemas")
-funcionario2 = Funcionario("Maria", "RH", "Gerente de Recursos Humanos")
+tete = Gamer("Cafezinho", "tetst", ["GTA", "FIFA", "Call of Duty"])
 
-print(funcionario1.apresentar())
-print(funcionario2.apresentar())
+tete.ficha()

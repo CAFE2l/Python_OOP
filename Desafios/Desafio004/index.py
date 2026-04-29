@@ -47,19 +47,22 @@ estilos = {
 }
 
 
-class Funcionario:
-    def __init__(self, nome, setor, cargo, empresa="Samptech"):
-        self.nome = nome
-        self.setor = setor
-        self.cargo = cargo
-        self.empresa = empresa
+class Livro:
+    def __init__(self, paginas, fim_paginas):
+        self.paginas = paginas
+        self.fim_paginas = fim_paginas
 
-    def apresentar(self):
-        return f"{estilos['negrito']}{cores['azul']}Funcionário: {cores['vermelho']}{self.nome} {cores['azul']}setor: {cores['verde']}{self.setor} {cores['azul']}cargo: {cores['amarelo']}{self.cargo} na empresa {cores['roxo']}{self.empresa}{cores['limpa']}"
+    def passagem_de_paginas(self):
+        if self.paginas < self.fim_paginas:
+            print(
+                f"{cores['cinza']}{estilos['negrito']}Você passou da página {cores['verde']}{self.paginas} {cores['cinza']} para a página {cores['azul']}{self.paginas + 1}{cores['limpa']}."
+            )
+            self.paginas += 1
+        else:
+            print(
+                f"{cores['vermelho']}{estilos['italico']}{estilos['negrito']}Você já está na última página do livro.{cores['limpa']}"
+            )
 
 
-funcionario1 = Funcionario("João", "TI", "Analista de Sistemas")
-funcionario2 = Funcionario("Maria", "RH", "Gerente de Recursos Humanos")
-
-print(funcionario1.apresentar())
-print(funcionario2.apresentar())
+livro = Livro(1, 10)
+livro.passagem_de_paginas()

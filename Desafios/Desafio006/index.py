@@ -47,19 +47,35 @@ estilos = {
 }
 
 
-class Funcionario:
-    def __init__(self, nome, setor, cargo, empresa="Samptech"):
-        self.nome = nome
-        self.setor = setor
-        self.cargo = cargo
-        self.empresa = empresa
+class Caneta:
+    def __init__(self, cor="azul"):
+        self.cor = cor
 
-    def apresentar(self):
-        return f"{estilos['negrito']}{cores['azul']}Funcionário: {cores['vermelho']}{self.nome} {cores['azul']}setor: {cores['verde']}{self.setor} {cores['azul']}cargo: {cores['amarelo']}{self.cargo} na empresa {cores['roxo']}{self.empresa}{cores['limpa']}"
+    def escrever(self):
+        print("(1) Azul (2) Vermelho (3) Verde (4) Amarelo")
+        resposta = int(input("Digite a cor que deseja utilizar: "))
+        frase = input("Digite a frase que deseja escrever: ")
+
+        mapa_opcoes = {
+            1: "azul",
+            2: "vermelho",
+            3: "verde",
+            4: "amarelo",
+        }
+
+        mapa_cores = {
+            "azul": cores["azul"],
+            "vermelho": cores["vermelho"],
+            "verde": cores["verde"],
+            "amarelo": cores["amarelo"],
+        }
+
+        if resposta not in mapa_opcoes:
+            return "Opção inválida"
+
+        self.cor = mapa_opcoes[resposta]
+        return f"{mapa_cores[self.cor]}{frase}{estilos['reset']}"
 
 
-funcionario1 = Funcionario("João", "TI", "Analista de Sistemas")
-funcionario2 = Funcionario("Maria", "RH", "Gerente de Recursos Humanos")
-
-print(funcionario1.apresentar())
-print(funcionario2.apresentar())
+test = Caneta()
+print(test.escrever())
