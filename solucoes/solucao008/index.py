@@ -30,9 +30,9 @@ class Gamer:
                 break
 
     def status(self):
-        print(f"{estilos['negrito']}Nome: {self.nome}")
-        print(f"Nick: {self.nick}")
-        print(f"Jogos favoritos: {', '.join(self.favoritos)}")
+        print(f"{estilos['negrito']}{cores['vermelho']}Nome: {cores['cinza']}{self.nome}")
+        print(f"{estilos['negrito']}{cores['azul']}Nick: {cores['cinza']}{self.nick}")
+        print(f"{estilos['negrito']}{cores['amarelo']}Jogos favoritos: {cores['roxo']}{self.favoritos}{cores['limpa']}")
 
  
 j1 = Gamer(nome=None, nick=None)
