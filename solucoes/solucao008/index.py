@@ -26,7 +26,7 @@ class Gamer:
             jogos = input(f"{estilos['negrito']}Digite seus jogos {cores['amarelo']}favoritos:{cores['cinza']} ") 
             self.favoritos.append(jogos)
             continuar = input(f"Deseja adicionar mais jogos? {cores["verde"]}(s/n):{cores['cinza']} ")
-            if continuar.lower() != 's':
+            if continuar.lower() != 's' or continuar.lower() == 'n':
                 break
 
     def status(self):
