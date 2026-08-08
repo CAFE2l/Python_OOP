@@ -1,12 +1,12 @@
 from abc import ABC, abstractmethod
-
+from rich import print, inspect
 
 class Bebida(ABC):
     def __init__(self, nome: str):
         self.nome = nome
 
     def preparar(self) -> None:
-        print(f"---- Iniciando o Preparo ----") 
+        print(f"[bold][cyan]---- Iniciando o Preparo ----[/]") 
         print(f"1. Fervendo a agua a 100 graus celsius")
         self.misturar()
         self.servir()
@@ -21,7 +21,7 @@ class Bebida(ABC):
         pass
 
     def final(self) -> None:
-        print(f"---- Bebida Pronta ----")
+        print(f"[red][bold]---- Bebida Pronta ----[/]")
 
     
 class Cafe(Bebida):
@@ -30,7 +30,7 @@ class Cafe(Bebida):
         
 
     def misturar(self) -> None:
-        print(f"2. Passando a agua pressurizada pelo po de cafe moido")
+        print(f"2. Passando a agua pressurizada pelo po de [red][bold]cafe[/][/] moido")
         
     def servir(self) -> None:
         print(f"3. Servindo em xicara pequena")
@@ -50,7 +50,7 @@ class Leite(Bebida):
         super().__init__("Leite")
 
     def misturar(self) -> None:
-            print("2. Passando vapor pressurizado pelo bico do leite")
+            print("2. Passando vapor pressurizado pelo bico do [green][bold]leite[/]")
 
     def servir(self) -> None:
             print("3. Servindo em xicara grande")
