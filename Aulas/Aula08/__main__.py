@@ -1,12 +1,12 @@
 from index import *
+from rich import print, inspect
 
 def main():
-    c1 = ContaBancaria(id=111, titular="Maria", saldo=5000)
-    c1.depositar(-500)
-    c1.sacar(-100)
-    c1.__saldo = 0 
-    c1._titular = "Pedro" # he allows but dot not touch cause 'consenting adults'
-    print(c1)
+    av1 = Avaliacao("Pedro", "Matematica")
+    av1.set_nota(8.2)
+    print(f"{av1.nome} tirou {av1.get_nota()} em {av1.disciplina}")
+    inspect(av1, private=True)
+
 
 if __name__ == "__main__":
     main()
