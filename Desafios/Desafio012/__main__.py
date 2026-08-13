@@ -2,7 +2,7 @@ from index import *
 
 def main():
     p1 = Guerreiro("Kratos", 2000)
-    p2 = Mago("Merlin", 300)
+    p2 = Mago("bruxa do 71", 300)
 
 
     p1.atacar(p2, 1000) 
