@@ -7,7 +7,7 @@ def main():
     d.Escrever("Você é uma pessoa muito simpática")
     d.Escrever("Que isso cara")
 
-    d.Ler("Gafanhoto")
+
 
     inspect(d, methods=True, private=True)
 if __name__ == "__main__":

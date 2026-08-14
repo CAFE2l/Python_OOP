@@ -7,16 +7,15 @@ class Diario:
 
     @property
     def senha(self):
-        raise PermissionError("Ninguém tem permissão para ler sem a senha")
+        raise PermissionError("Senha não definida")
 
-    def Escrever(self, texto):
-        self.__segredos.append(f"{texto}")
+    def Escrever(self, msg):
+        self.__segredos.append(msg)
 
 
     def Ler(self, senha=None):
-        if senha != self.__senha:
-            raise PermissionError("[red][bold]Senha incorreta[/][/]")
-        elif senha == self.__senha:
-            return self.__segredos
+        if senha == self.__senha:
+            for segredo in self.__segredos:
+                print(segredo)
         else:
-            return f"[red][bold]Assim não filha da puta[/][/]"
+            raise PermissionError("Senha incorreta")
