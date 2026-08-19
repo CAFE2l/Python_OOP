@@ -3,24 +3,28 @@ class Retangulo:
         self.base = base
         self._altura = altura
 
-    @property # permitindo getter e setter
+    @property
     def base(self):
         if (self._base < 0):
             raise ValueError("Base não pode ser negativa")
         else:
             return self._base
 
+
     @base.setter
-    def base(self, base):
-        self._base = base
+    def base(self, valor):
+        if (valor < 0):
+            raise ValueError("Base não pode ser negativa")
+        else:
+            self._base = valor
 
     @property
     def altura(self):
         return self._altura
 
     @altura.setter
-    def altura(self, altura):
-        self._altura = altura
+    def altura(self, valor):
+        self._altura = valor
 
     @property
     def area(self):
@@ -28,8 +32,8 @@ class Retangulo:
 
     @property
     def medidas(self):
-        return f"Base: {self._base}\n Altura: {self._altura} \n Area: {self.area}"
+        return f"Base: {self._base}, Altura: {self._altura}, Area: {self.area}"
 
     @medidas.setter
     def medidas(self, valores):
-        self._base, self._altura = valores
+        self.altura, self.base = valores
