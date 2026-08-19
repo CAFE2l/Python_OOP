@@ -2,6 +2,7 @@ import hashlib
 from rich import print
 import getpass
 
+
 class ContaBancaria:
     def __init__(self, id, nome, saldo, chave):
         self.id = id
