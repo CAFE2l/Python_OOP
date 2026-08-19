@@ -1,15 +1,21 @@
-from json.encoder import py_encode_basestring_ascii
-
-from rich import print, inspect
-
+import hashlib
+from rich import print
 
 class Credencial:
-    def __init__(self, senha):
-        self.__senha = senha
+    def __init__(self):
+        self.senha = None
+        self.__hash = None
 
-    def senha(self):
-        import hashlib
-        return hashlib.sha256(self.__senha.encode()).hexdigest()
+    def Senha(self, code):
+        h = hashlib.sha256(code.encode()).hexdigest()
+        self.__hash = h
+        self.senha = h
 
-    def __str__(self):
-        return self.criarSHA256()
+    def validar(self, chave):
+        chave_hash = hashlib.sha256(chave.encode()).hexdigest()
+        if chave_hash == self.__hash:
+            print("Senha correta")
+            return True
+        else:
+            print("senha incorreta")
+            return False
